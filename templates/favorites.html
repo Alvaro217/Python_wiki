@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br><br>
+{% for item in favorites %}
+<div class="alert alert-warning" role="alert">
+    <h1>{{ item[2] }}</h1>
+    <div>Text: {{ item[3] }}</div>
+    <a href="/find/{{item[2]}}">Go for more information</a>
+    <a href="/delete/{{item[0]}}/favorites">
+        <button class="btn btn-dark"> Delete</button>
+    </a>
+</div>
+{% endfor %}
+{% endblock %}

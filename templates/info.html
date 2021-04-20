@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br><br>
+{% if error == 'notfound' %}
+<div>Not found</div>
+<button><a href="/" style="color: #ffffff; margin-left: 10px;" class="alert-link">Try again</a></button>
+{% endif %}
+{% if error == 'no' %}
+<div class="alert alert-warning" role="alert">
+    <div>Text: {{info}}</div>
+    <a href="{{url}}">Go to real wiki for more information</a>
+    <button><a href="/add/{{word}}/{{info}}" style="color: #ffffff; margin-left: 10px;" class="alert-link">Add to favorites</a></button>
+</div>
+{% endif %}
+{% endblock %}
